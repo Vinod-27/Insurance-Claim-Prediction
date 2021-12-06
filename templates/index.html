@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    body{  
+        height: 100vh;
+        background-image: url('static/images.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+        input[type=text] {
+            height: 17px;
+            border: 0;
+            width: 50px;
+            margin-left:1px;
+            box-shadow: -8px 10px 0px -7px #ebebeb, 8px 10px 0px -7px #ebebeb;
+            -webkit-transition: box-shadow 0.3s;
+            transition: box-shadow 0.3s;
+          }
+          select.s1{
+            height: 22px;
+            width: 170px;
+        }
+        select.s2{
+            height: 22px;
+            width: 170px;
+        }
+        select.s3{
+            height: 22px;
+            width: 170px;
+        }
+          input[type=text]:focus {
+            outline: none;
+            box-shadow: -8px 10px 0px -7px black, 8px 10px 0px -7px black;
+          }
+        
+</style>
+    <!-- <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Model Deployment</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+   
+    <div class="container">
+    <center> 
+        <h2>Insurance Claim Prediction</h2>
+
+        <form action="/predict" method="post">
+        <center>        
+            Age:  <input type="Age" id="Age" name="Age"/>
+            <br>
+            <br>
+            <!-- <h4>Sex</h4> -->
+            <!-- Sex: <input type="Sex" id="Sex" name="Sex"/> -->
+            Sex: <select class="s1" name="Sex" id="Sex " > 
+                <option value="Male" >Male </option>
+                        <option value="Female" >Female</option>
+                </select>
+                <br>
+                <br>
+            BMI: <input type="BMI" id="BMI" name="BMI"/>
+            <br>
+            <br>
+            Childrens: <input type="Childrens" id="Childrens" name="Childrens">
+                        <!-- <option value="None">None</option> -->
+            <br>
+            <br>
+            Smoker: <select class="s2" name="Smoker" id="Smoker" required="required">
+                <option value="Yes" width="200px">Yes </option>
+                <option value="No" width="200px" >No </option>
+                </select>
+            <br>
+            <br>
+            Region: <select class="s3" name="Region" id="Region" name="Region"/>
+                <option value ="NorthEast">NorthEast</option>
+                <option value ="NorthWest">NorthWest</option>
+                <option value ="SouthEast">SouthEast</option>
+                <option value ="SouthWest">SouthWest</option>
+                </select>
+            <br>
+            <br>
+            Charges:  <input type="Charges" id="Charges" name="Charges"/>
+            <br><br>
+            <br>
+            <input type ="submit" value="Submit" class="btn btn-secondary" style="width: 7rem; height: 35px; color:black ;">
+            <br>
+            <br>
+            <h3>{{ prediction_text }}</h3>
+    
+        </center>    
+        </form>
+    </center>
+    </div>
+    
+</body>
+
+</html>
